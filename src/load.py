@@ -10,6 +10,9 @@ from extract import extract_data
 def load_data():
 
     data = extract_data()
+    if not data:
+        print('Mo data to load.')
+        return
 
     load_dotenv()
     db = os.getenv('DB')
